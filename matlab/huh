@@ -1,0 +1,43 @@
+function mjdAMAComp()
+global oo_ M_ it_ options_;
+
+
+
+%runIt('example1');       runIt('mod2');           runIt('t_lag2_checka');  
+%runIt('example2');       runIt('mod2a');          runIt('t_lag2a');        
+%runIt('fs2000');         runIt('mod2b');          runIt('t_lag2b');        
+%        runIt('mod2c');          runIt('t_periods');      
+%        runIt('mod3a');          
+runIt('mod1');                     runIt('t_sgu_ex1');      
+runIt('mod1a');                  runIt('test_matlab');    
+runIt('mod1b');          runIt('t_lag2');         runIt('variance_0');     
+runIt('mod1c');          runIt('t_lag2_check');   
+
+
+runIt('test_matlab')
+
+
+runIt('t_periods')
+
+
+
+runIt('example2')
+
+
+runIt('example1')
+
+
+'following have problems**********************************************'
+
+runIt('ramst')
+
+
+runIt('ramst_a')
+
+runIt('t_periods_a');    
+
+function runIt(anArg)
+disp(anArg)
+eval(anArg)
+options_.order=1;
+[dr,info]=resol(oo_.steady_state,1);
